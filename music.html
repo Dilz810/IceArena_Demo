@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Events - Ice Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    .hero-background {
+        background-image: url("images/music.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+</style>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.PNG" alt="Event Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <div class="dropdown-content">
+                    <a href="sports.html">Sports</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="gaming.html">Gaming</a>
+                    <a href="music.html">Music</a>
+                    <a href="art.html">Art</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ourarena.html">Our Arena</a>
+                <div class="dropdown-content">
+                    <a href="seating-plan.html">Seating Plan</a>
+                </div>
+            </li>
+            <li><a href="find-us.html">How to Find Us</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Music Events</h1>
+            <p class="tagline">Experience Unforgettable Live Performances</p>
+        </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="featured-events">
+        <div class="container">
+            <h2>Upcoming Concerts</h2>
+            <div class="event-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/rock.jpg" alt="Rock Concert">
+                        <div class="event-date">
+                            <span class="day">20
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-tag">Rock</div>
+                        <h3>The Rolling Stones</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 8:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">Legendary rock band live in concert.</p>
+                        <div class="event-price">From £75.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/pop.jpg" alt="Pop Concert">
+                        <div class="event-date">
+                            <span class="day">27
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-tag">Pop</div>
+                        <h3>Taylor Swift</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 7:30 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">World tour spectacular performance.</p>
+                        <div class="event-price">From £85.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/jazz.jpg" alt="Jazz Festival">
+                        <div class="event-date">
+                            <span class="day">30
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-tag">Jazz</div>
+                        <h3>Winter Jazz Festival</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 6:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">A night of smooth jazz and soul.</p>
+                        <div class="event-price">From £45.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Genres -->
+    <section class="music-genres">
+        <div class="container">
+            <h2>Music Genres</h2>
+            <div class="genre-grid">
+                <div class="genre-card">
+                    <i class="fas fa-guitar"></i>
+                    <h3>Rock</h3>
+                    <p>Classic and modern rock performances</p>
+                </div>
+
+                <div class="genre-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Pop</h3>
+                    <p>Chart-topping pop artists</p>
+                </div>
+
+                <div class="genre-card">
+                    <i class="fas fa-drum"></i>
+                    <h3>Jazz</h3>
+                    <p>Smooth jazz and blues nights</p>
+                </div>
+
+                <div class="genre-card">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Classical</h3>
+                    <p>Orchestra and classical concerts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Features -->
+    <section class="venue-features">
+        <div class="container">
+            <h2>Venue Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-volume-up"></i>
+                    <h3>State-of-the-Art Sound</h3>
+                    <ul>
+                        <li>Premium acoustics</li>
+                        <li>Professional sound system</li>
+                        <li>Perfect audio balance</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Lighting System</h3>
+                    <ul>
+                        <li>Dynamic light shows</li>
+                        <li>LED technology</li>
+                        <li>Atmospheric effects</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-chair"></i>
+                    <h3>Seating Options</h3>
+                    <ul>
+                        <li>VIP sections</li>
+                        <li>Standing areas</li>
+                        <li>Premium viewing spots</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-glass-cheers"></i>
+                    <h3>Facilities</h3>
+                    <ul>
+                        <li>Multiple bars</li>
+                        <li>Food concessions</li>
+                        <li>VIP lounges</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Performances Gallery -->
+    <section class="performance-gallery">
+        <div class="container">
+            <h2>Past Performances</h2>
+            <div class="gallery-grid">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Experience -->
+    <section class="vip-experience">
+        <div class="container">
+            <h2>VIP Experience</h2>
+            <div class="vip-grid">
+                <div class="vip-card">
+                    <h3>Premium Package</h3>
+                    <ul>
+                        <li>Priority entrance</li>
+                        <li>VIP lounge access</li>
+                        <li>Meet & greet opportunities</li>
+                        <li>Exclusive merchandise</li>
+                        <li>Premium seating</li>
+                    </ul>
+                    <a href="#" class="vip-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Tuned</h2>
+            <p>Subscribe for exclusive pre-sale access and event updates</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

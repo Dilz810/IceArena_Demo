@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Events - Ice Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    .hero-background {
+        background-image: url("images/artbgimg.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+</style>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.PNG" alt="Event Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <div class="dropdown-content">
+                    <a href="sports.html">Sports</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="gaming.html">Gaming</a>
+                    <a href="music.html">Music</a>
+                    <a href="art.html">Art</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ourarena.html">Our Arena</a>
+                <div class="dropdown-content">
+                    <a href="seating-plan.html">Seating Plan</a>
+                </div>
+            </li>
+            <li><a href="find-us.html">How to Find Us</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Art Events</h1>
+            <p class="tagline">Experience Creativity and Culture</p>
+        </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="featured-events">
+        <div class="container">
+            <h2>Upcoming Art Events</h2>
+            <div class="event-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/art1.jpg" alt="Modern Art Exhibition">
+                        <div class="event-date">
+                            <span class="day">15
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-tag">Exhibition</div>
+                        <h3>Modern Masters</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 10:00 AM - 6:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Gallery</p>
+                        <p class="event-description">Contemporary art exhibition featuring leading artists.</p>
+                        <div class="event-price">From £15.00</div>
+                        <a href="#" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/art2.jpg" alt="Sculpture Exhibition">
+                        <div class="event-date">
+                            <span class="day">20
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-tag">Sculpture</div>
+                        <h3>Form & Space</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 11:00 AM - 7:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Sculpture Garden</p>
+                        <p class="event-description">International sculpture showcase.</p>
+                        <div class="event-price">From £12.00</div>
+                        <a href="#" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/art3.jpg" alt="Digital Art Show">
+                        <div class="event-date">
+                            <span class="day">28
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-tag">Digital</div>
+                        <h3>Digital Revolution</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 12:00 PM - 8:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Digital Gallery</p>
+                        <p class="event-description">Interactive digital art experience.</p>
+                        <div class="event-price">From £18.00</div>
+                        <a href="#" class="book-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Art Categories -->
+    <section class="art-categories">
+        <div class="container">
+            <h2>Art Forms</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Paintings</h3>
+                    <p>Contemporary and classical paintings</p>
+                </div>
+
+                <div class="category-card">
+                    <i class="fas fa-cubes"></i>
+                    <h3>Sculptures</h3>
+                    <p>3D art and installations</p>
+                </div>
+
+                <div class="category-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Digital Art</h3>
+                    <p>Interactive and digital exhibitions</p>
+                </div>
+
+                <div class="category-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photography</h3>
+                    <p>Photo exhibitions and installations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibition Features -->
+    <section class="exhibition-features">
+        <div class="container">
+            <h2>Exhibition Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Lighting</h3>
+                    <ul>
+                        <li>Museum-grade lighting</li>
+                        <li>Adjustable settings</li>
+                        <li>Artwork preservation</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-temperature-low"></i>
+                    <h3>Climate Control</h3>
+                    <ul>
+                        <li>Temperature regulated</li>
+                        <li>Humidity control</li>
+                        <li>Art preservation</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-universal-access"></i>
+                    <h3>Accessibility</h3>
+                    <ul>
+                        <li>Wheelchair access</li>
+                        <li>Audio guides</li>
+                        <li>Braille information</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>Information</h3>
+                    <ul>
+                        <li>Guided tours</li>
+                        <li>Digital catalogs</li>
+                        <li>Artist information</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artist Workshops -->
+    <section class="workshops">
+        <div class="container">
+            <h2>Upcoming Workshops</h2>
+            <div class="workshop-grid">
+                <div class="workshop-card">
+                    <div class="workshop-image">
+                        <img src="images/w1.jpg" alt="Painting Workshop">
+                    </div>
+                    <div class="workshop-details">
+                        <h3>Oil Painting Masterclass</h3>
+                        <p class="workshop-date"><i class="far fa-calendar"></i> December 16, 2024</p>
+                        <p class="workshop-time"><i class="far fa-clock"></i> 2:00 PM - 5:00 PM</p>
+                        <p class="workshop-description">Learn oil painting techniques from professional artists.</p>
+                        <a href="#" class="workshop-button">Register Now</a>
+                    </div>
+                </div>
+                 <div class="workshop-card">
+    <div class="workshop-image">
+        <img src="images/w2.jpg" alt="Watercolor Workshop">
+    </div>
+    <div class="workshop-details">
+        <h3>Watercolor Techniques</h3>
+        <p class="workshop-date"><i class="far fa-calendar"></i> December 18, 2024</p>
+        <p class="workshop-time"><i class="far fa-clock"></i> 10:00 AM - 1:00 PM</p>
+        <p class="workshop-description">Explore watercolor painting methods and color theory.</p>
+        <a href="#" class="workshop-button">Register Now</a>
+    </div>
+</div>
+
+<div class="workshop-card">
+    <div class="workshop-image">
+        <img src="images/w3.jpg" alt="Acrylic Workshop">
+    </div>
+    <div class="workshop-details">
+        <h3>Acrylic Painting for Beginners</h3>
+        <p class="workshop-date"><i class="far fa-calendar"></i> December 21, 2024</p>
+        <p class="workshop-time"><i class="far fa-clock"></i> 3:00 PM - 6:00 PM</p>
+        <p class="workshop-description">Learn fundamental acrylic painting skills and techniques.</p>
+        <a href="#" class="workshop-button">Register Now</a>
+    </div>
+</div>                             </div>
+        </div>
+    </section>
+
+    <!-- Gallery Shop -->
+    <section class="gallery-shop">
+        <div class="container">
+            <h2>Gallery Shop</h2>
+            <p>Take home a piece of art</p>
+            <div class="shop-categories">
+                <div class="shop-category">
+                    <i class="fas fa-book"></i>
+                    <h3>Art Books</h3>
+                </div>
+                <div class="shop-category">
+                    <i class="fas fa-print"></i>
+                    <h3>Prints</h3>
+                </div>
+                <div class="shop-category">
+                    <i class="fas fa-gift"></i>
+                    <h3>Merchandise</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Inspired</h2>
+            <p>Subscribe for exhibition updates and early access to tickets</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

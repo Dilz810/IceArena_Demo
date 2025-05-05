@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Ice Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.PNG" alt="Event Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <div class="dropdown-content">
+                    <a href="sports.html">Sports</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="gaming.html">Gaming</a>
+                    <a href="music.html">Music</a>
+                    <a href="art.html">Art</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ourarena.html">Our Arena</a>
+                <div class="dropdown-content">
+                    <a href="seating-plan.hatml">Seating Plan</a>
+                </div>
+            </li>
+            <li><a href="find-us.html">How to Find Us</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Video Hero Section -->
+    <section class="video-hero">
+        <video autoplay muted loop id="heroVideo">
+            <source src="video/Truss – Event Recap Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+            <h1>Upcoming Events</h1>
+            <p>Experience Unforgettable Moments at Ice Arena</p>
+        </div>
+    </section>
+
+    <!-- Event Categories -->
+    <section class="event-categories">
+        <div class="container">
+            <h2>Event Categories</h2>
+            <div class="category-grid">
+                <!-- Sports Events -->
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/football.jpg" alt="Sports Events">
+                        <div class="category-overlay">
+                            <h3>Sports Events</h3>
+                            <p>Ice Hockey, Figure Skating, and More</p>
+                            <a href="sports.html" class="category-btn">View Events</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comedy Shows -->
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/comedy.jpg" alt="Comedy Shows">
+                        <div class="category-overlay">
+                            <h3>Comedy Shows</h3>
+                            <p>Stand-up Comedy and Entertainment</p>
+                            <a href="comedy.html" class="category-btn">View Events</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gaming Events -->
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/gaming.jpg" alt="Gaming Events">
+                        <div class="category-overlay">
+                            <h3>Gaming Events</h3>
+                            <p>eSports Tournaments and Gaming Conventions</p>
+                            <a href="gaming.html" class="category-btn">View Events</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Music Concerts -->
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/music.jpg" alt="Music Concerts">
+                        <div class="category-overlay">
+                            <h3>Music Concerts</h3>
+                            <p>Live Performances and Concerts</p>
+                            <a href="music.html" class="category-btn">View Events</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art & Culture -->
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/art.jpg" alt="Art Events">
+                        <div class="category-overlay">
+                            <h3>Art & Culture</h3>
+                            <p>Exhibitions and Cultural Shows</p>
+                            <a href="art.html" class="category-btn">View Events</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events Slider -->
+    <section class="featured-events">
+        <div class="container">
+            <h2>Featured Events</h2>
+            <div class="event-slider">
+             
+                <div class="event-card">
+                    <img src="images/boxing.jpg" alt="Event 1">
+                    <div class="event-info">
+                        <h3>Boxing Championship</h3>
+                        <p class="date">Dec 15, 2024</p>
+                        <p class="price">From £40</p>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <img src="images/swimming.jpg" alt="lol">
+                    <div class="event-info">
+                        <h3>Swimming Championships</h3>
+                        <p class="date">Dec 15, 2024</p>
+                        <p class="price">From £10</p>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+           
+                <div class="event-card">
+                    <img src="images/running.jpg" alt="Event 1">
+                    <div class="event-info">
+                        <h3>Running Championships</h3>
+                        <p class="date">Dec 15, 2024</p>
+                        <p class="price">From £30</p>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

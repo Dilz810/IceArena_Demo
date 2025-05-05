@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Events - Ice Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    .hero-background {
+        background-image: url("images/sportsbgimg.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+</style>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.PNG" alt="Event Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <div class="dropdown-content">
+                    <a href="sports.html">Sports</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="gaming.html">Gaming</a>
+                    <a href="music.html">Music</a>
+                    <a href="art.html">Art</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ourarena.html">Our Arena</a>
+                <div class="dropdown-content">
+                    <a href="seating-plan.hatml">Seating Plan</a>
+                </div>
+            </li>
+            <li><a href="find-us.html">How to Find Us</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Sports Events</h1>
+            <p class="tagline">Experience World-Class Sporting Action</p>
+        </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="featured-events">
+        <div class="container">
+            <h2>Upcoming Sports Events</h2>
+            <div class="event-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/swimming.jpg" alt="Ice Hockey Match">
+                        <div class="event-date">
+                            <span class="day">15
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>Swimming Event</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 7:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">World-class swimming event.</p>
+                        <div class="event-price">From £30.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/football.jpg" alt="Basketball Game">
+                        <div class="event-date">
+                            <span class="day">20
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>Pro Football League</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 8:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">Professional Football league championship game.</p>
+                        <div class="event-price">From £25.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/boxing.jpg" alt="Boxing Match">
+                        <div class="event-date">
+                            <span class="day">28
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>Championship Boxing Night</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 9:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">World-class boxing championship event.</p>
+                        <div class="event-price">From £40.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Categories -->
+    <section class="sports-categories">
+        <div class="container">
+            <h2>Sports Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <i class="fas fa-hockey-puck"></i>
+                    <h3>Football</h3>
+                    <p>Professional and amateur football matches</p>
+                </div>
+
+                <div class="category-card">
+                    <i class="fas fa-basketball-ball"></i>
+                    <h3>Basketball</h3>
+                    <p>League games and international tournaments</p>
+                </div>
+
+                <div class="category-card">
+                    <i class="fa-solid fa-boxing-glove"></i>
+                    <h3>Boxing</h3>
+                    <p>Championship fights and boxing events</p>
+                </div>
+
+                <div class="category-card">
+                    <i class="fas fa-volleyball-ball"></i>
+                    <h3>Swimming</h3>
+                    <p>Professional and amateur swimming competitions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Facilities -->
+    <section class="venue-facilities">
+        <div class="container">
+            <h2>Sports Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <i class="fas fa-tv"></i>
+                    <h3>HD Screens</h3>
+                    <p>Multiple screens for instant replays</p>
+                </div>
+
+                <div class="facility-card">
+                    <i class="fas fa-chair"></i>
+                    <h3>Premium Seating</h3>
+                    <p>Comfortable seating with great views</p>
+                </div>
+
+                <div class="facility-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Concessions</h3>
+                    <p>Various food and beverage options</p>
+                </div>
+
+                <div class="facility-card">
+                    <i class="fas fa-parking"></i>
+                    <h3>Parking</h3>
+                    <p>Ample parking space available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest sports events and exclusive offers</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

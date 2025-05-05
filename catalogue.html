@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+        
+<title>Catalogue</title>
+
+
+<script src='js/jquery.min.js'></script>
+
+<script src='js/json_each.js'></script>
+
+<style>
+            
+img.on_sale {margin-top: 0px; cursor: pointer; border: 5px dotted; margin-left: 50px; width: 100px; height: 100px;}
+           
+img.on_sale:first-of-type {margin-left: 0px;}
+            
+div#popup {
+                
+margin-top: 0px;
+                
+width: 400px;
+                
+height: 500px;
+                
+text-align: center;
+                
+margin-left: 20%;
+                
+background: grey;
+            
+}
+           
+
+            
+        
+</style>
+    
+</head>
+
+    
+<body>
+                  
+              
+ 
+
+           
+           
+<div id="right" style="float:right;  background-color: #003333; color: white;width:350px;margin-right:0px;  margin-bottom: 20px">
+<div id="basket_cont">
+            
+<button onclick="remove_in_basket(document.getElementById('basket'), each(cost).keys)">Clear Basket</button>
+            
+<button onclick="$('button').remove(); check_out(document.getElementById('basket').innerHTML);">Checkout</button>
+            
+        
+</div> 
+            <div id="basket">
+               
+<div id="cost">
+                
+            
+</div> 
+            
+</div>
+           
+</div>         
+           
+
+<div id="middle">
+<div>
+        
+<img src="images/hbo-beyonce-concert-series.jpg" id="QueenB" class="on_sale"/>
+        
+<img src="images/edsheeran.jpg" id="Ed" class="on_sale"/>
+        
+<img src="images/Stormzy.jpg" id="Stormzy" class="on_sale"/>
+        
+<img src="images/JustinBieber.jpg" id="Bieber" class="on_sale"/>
+        
+<img src="images/LittleMix.jpg" id="Mix" class="on_sale"/>
+<div id="popup">
+        </div>
+    </div>
+            <script src='js/basket.js'></script>
+     
+
+</div>
+
+ 
+    <div id="footer">
+    
+    <p style="text-align:center">
+     
+       
+<img style="width:10%;height:5%" src="images/social_media.png" alt="social media" title="social media">
+
+</div>
+</div> 
+   
+
+</body>
+    </html>
+    
+    
+    
+   

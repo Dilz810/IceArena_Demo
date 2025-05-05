@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Find Us - Ice Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    .hero-background {
+        background-image: url("images/how.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+</style>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.PNG" alt="Event Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <div class="dropdown-content">
+                    <a href="sports.html">Sports</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="gaming.html">Gaming</a>
+                    <a href="music.html">Music</a>
+                    <a href="art.html">Art</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ourarena.html">Our Arena</a>
+                <div class="dropdown-content">
+                    <a href="seating-plan.hatml">Seating Plan</a>
+                </div>
+            </li>
+            <li><a href="find-us.html">How to Find Us</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>How to Find Us</h1>
+            <p class="tagline">Your Journey to Entertainment Starts Here</p>
+        </div>
+    </section>
+
+    <!-- Location Information -->
+    <section class="location-details">
+        <div class="container">
+            <div class="info-grid">
+                <!-- Address Section -->
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Our Address</h3>
+                    <p>Bencewell Business Centre, Oakley Rd, Bromley BR2 8HG</p>
+                </div>
+
+                <!-- Transportation Section -->
+                <div class="info-card">
+                    <i class="fas fa-car"></i>
+                    <h3>By Car</h3>
+                    <p>Free parking available on-site</p>
+                    <a href="#" class="directions-btn">Get Directions</a>
+                </div>
+
+                <!-- Public Transport Section -->
+                <div class="info-card">
+                    <i class="fas fa-bus"></i>
+                    <h3>Public Transport</h3>
+                    <p>Bus Routes: 10, 12, 15</p>
+                    <p>Nearest Station: Central Station</p>
+                    <p>5 minutes walking distance</p>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-container">
+                <h2>Interactive Map</h2>
+            
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_CODE"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="additional-info">
+                <h2>Additional Information</h2>
+                <div class="info-columns">
+                    <div class="info-column">
+                        <h3>Parking Information</h3>
+                        <ul>
+                            <li>Main parking lot capacity: 500 vehicles</li>
+                            <li>Disabled parking spaces available</li>
+                            <li>Electric vehicle charging stations</li>
+                            <li>24/7 security surveillance</li>
+                        </ul>
+                    </div>
+                    <div class="info-column">
+                        <h3>Accessibility</h3>
+                        <ul>
+                            <li>Wheelchair accessible entrance</li>
+                            <li>Elevator access to all levels</li>
+                            <li>Accessible restrooms</li>
+                            <li>Assistant services available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="quick-contact">
+        <div class="container">
+            <h2>Need Help?</h2>
+            <p>If you need additional directions or assistance, please don't hesitate to contact us:</p>
+            <div class="contact-methods">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>Call us: 07935607933</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email: info@icearena.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

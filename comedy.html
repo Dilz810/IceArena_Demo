@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comedy Events - Ice Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    .hero-background {
+        background-image: url("images/comedyimg.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+</style>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.PNG" alt="Event Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <div class="dropdown-content">
+                    <a href="sports.html">Sports</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="gaming.html">Gaming</a>
+                    <a href="music.html">Music</a>
+                    <a href="art.html">Art</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ourarena.html">Our Arena</a>
+                <div class="dropdown-content">
+                    <a href="seating-plan.hatml">Seating Plan</a>
+                </div>
+            </li>
+            <li><a href="find-us.html">How to Find Us</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Comedy Events</h1>
+            <p class="tagline">A Night of Laughter and Entertainment</p>
+        </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="featured-events">
+        <div class="container">
+            <h2>Upcoming Comedy Shows</h2>
+            <div class="event-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/comedy.jpg" alt="Stand-up Comedy">
+                        <div class="event-date">
+                            <span class="day">15
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-tag">Stand-up</div>
+                        <h3>Michael McIntyre</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 8:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">Award-winning comedian returns with new material.</p>
+                        <div class="event-price">From £35.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/bosh.jpg" alt="Comedy Group">
+                        <div class="event-date">
+                            <span class="day">22
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-tag">Improv</div>
+                        <h3>Comedy Night Live</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 7:30 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">An evening of improvised comedy.</p>
+                        <div class="event-price">From £25.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/white.jpg" alt="Comedy Special">
+                        <div class="event-date">
+                            <span class="day">29
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-tag">Special</div>
+                        <h3>Comedy Gala 2024</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 7:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">Multiple comedians in one spectacular show.</p>
+                        <div class="event-price">From £40.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comedy Types -->
+    <section class="comedy-types">
+        <div class="container">
+            <h2>Types of Shows</h2>
+            <div class="type-grid">
+                <div class="type-card">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Stand-up Comedy</h3>
+                    <p>Solo performances from top comedians</p>
+                </div>
+
+                <div class="type-card">
+                    <i class="fas fa-theater-masks"></i>
+                    <h3>Improv Comedy</h3>
+                    <p>Spontaneous and interactive shows</p>
+                </div>
+
+                <div class="type-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Sketch Comedy</h3>
+                    <p>Group performances and sketches</p>
+                </div>
+
+                <div class="type-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Comedy Specials</h3>
+                    <p>Featured events and galas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Features -->
+    <section class="venue-features">
+        <div class="container">
+            <h2>Venue Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-couch"></i>
+                    <h3>Comfortable Seating</h3>
+                    <ul>
+                        <li>Premium seats</li>
+                        <li>Clear sightlines</li>
+                        <li>Accessible options</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-glass-martini-alt"></i>
+                    <h3>Bar Service</h3>
+                    <ul>
+                        <li>Pre-show drinks</li>
+                        <li>Table service</li>
+                        <li>Interval drinks</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-volume-up"></i>
+                    <h3>Sound System</h3>
+                    <ul>
+                        <li>Crystal clear audio</li>
+                        <li>Even sound distribution</li>
+                        <li>Professional setup</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-parking"></i>
+                    <h3>Facilities</h3>
+                    <ul>
+                        <li>Easy parking</li>
+                        <li>Food options</li>
+                        <li>Cloakroom</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Shows Gallery -->
+    <section class="shows-gallery">
+        <div class="container">
+            <h2>Previous Shows</h2>
+            <div class="gallery-grid">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Age Guidelines -->
+    <section class="age-guidelines">
+        <div class="container">
+            <h2>Important Information</h2>
+            <div class="guidelines-grid">
+                <div class="guideline-card">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Age Restrictions</h3>
+                    <p>Most shows are suitable for ages 16+. Please check individual event details.</p>
+                </div>
+                <div class="guideline-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Show Times</h3>
+                    <p>Doors typically open 1 hour before show time.</p>
+                </div>
+                <div class="guideline-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Recording Policy</h3>
+                    <p>No photography or recording during performances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Don't Miss the Fun!</h2>
+            <p>Subscribe for early access to tickets and exclusive offers</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

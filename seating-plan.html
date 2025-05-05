@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seating Plan - Ice Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    .hero-background {
+        background-image: url("images/sp.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+</style>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.PNG" alt="Event Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <div class="dropdown-content">
+                    <a href="sports.html">Sports</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="gaming.html">Gaming</a>
+                    <a href="music.html">Music</a>
+                    <a href="art.html">Art</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ourarena.html">Our Arena</a>
+                <div class="dropdown-content">
+                    <a href="seating-plan.html">Seating Plan</a>
+                </div>
+            </li>
+            <li><a href="find-us.html">How to Find Us</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Seating Plan</h1>
+            <p class="tagline">Find Your Perfect Spot</p>
+        </div>
+    </section>
+
+    <!-- Seating Plan Section -->
+    <section class="seating-plan-section">
+        <div class="container">
+           
+            <div class="seating-map">
+                <h2>Arena Seating Map</h2>
+                <div class="map-container">
+                    <img src="images/seatingmap.jpg" alt="Arena Seating Map" usemap="#seat-map">
+                    
+                    <map name="seat-map">
+                        
+                    </map>
+                </div>
+            </div>
+
+            <!-- Seating Categories -->
+            <div class="seating-categories">
+                <h2>Seating Categories</h2>
+                <div class="category-grid">
+                    <div class="category-card premium">
+                        <div class="color-indicator"></div>
+                        <div class="category-info">
+                            <h3>Premium VIP</h3>
+                            <p>Best views and exclusive amenities</p>
+                            <ul>
+                                <li>Padded premium seats</li>
+                                <li>In-seat service</li>
+                                <li>VIP lounge access</li>
+                                <li>Priority entrance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="category-card gold">
+                        <div class="color-indicator"></div>
+                        <div class="category-info">
+                            <h3>Gold Section</h3>
+                            <p>Excellent central views</p>
+                            <ul>
+                                <li>Comfortable seating</li>
+                                <li>Good viewing angles</li>
+                                <li>Easy access to facilities</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="category-card silver">
+                        <div class="color-indicator"></div>
+                        <div class="category-info">
+                            <h3>Silver Section</h3>
+                            <p>Great value seating</p>
+                            <ul>
+                                <li>Clear views</li>
+                                <li>Standard seating</li>
+                                <li>Good acoustics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="category-card standard">
+                        <div class="color-indicator"></div>
+                        <div class="category-info">
+                            <h3>Standard Section</h3>
+                            <p>Budget-friendly options</p>
+                            <ul>
+                                <li>Basic seating</li>
+                                <li>Arena atmosphere</li>
+                                <li>Access to all facilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accessibility Information -->
+            <div class="accessibility-info">
+                <h2>Accessibility Information</h2>
+                <div class="accessibility-grid">
+                    <div class="access-card">
+                        <i class="fas fa-wheelchair"></i>
+                        <h3>Wheelchair Spaces</h3>
+                        <p>Available in all sections with companion seats</p>
+                    </div>
+
+                    <div class="access-card">
+                        <i class="fas fa-deaf"></i>
+                        <h3>Hearing Loop</h3>
+                        <p>Available in designated areas</p>
+                    </div>
+
+                    <div class="access-card">
+                        <i class="fas fa-elevator"></i>
+                        <h3>Easy Access</h3>
+                        <p>Lifts and ramps to all levels</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="seating-info">
+                <h2>Important Information</h2>
+                <div class="info-columns">
+                    <div class="info-column">
+                        <h3>General Guidelines</h3>
+                        <ul>
+                            <li>Doors typically open 1 hour before event</li>
+                            <li>Each ticket corresponds to a numbered seat</li>
+                            <li>Food and drinks available at concession stands</li>
+                            <li>Photography policies vary by event</li>
+                        </ul>
+                    </div>
+                    <div class="info-column">
+                        <h3>Facilities</h3>
+                        <ul>
+                            <li>Restrooms on all levels</li>
+                            <li>Multiple concession stands</li>
+                            <li>First aid stations</li>
+                            <li>Information desks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="seating-cta">
+        <div class="container">
+            <h2>Ready to Book Your Seats?</h2>
+            <p>Check out our upcoming events and secure your preferred seating</p>
+            <a href="events.html" class="cta-button">View Events & Book Tickets</a>
+        </div>
+    </section>
+</body>
+</html>

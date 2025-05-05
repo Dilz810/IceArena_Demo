@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Events - Ice Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    .hero-background {
+        background-image: url("images/gamingg.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+</style>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.PNG" alt="Event Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <div class="dropdown-content">
+                    <a href="sports.html">Sports</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="gaming.html">Gaming</a>
+                    <a href="music.html">Music</a>
+                    <a href="art.html">Art</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ourarena.html">Our Arena</a>
+                <div class="dropdown-content">
+                    <a href="seating-plan.hatml">Seating Plan</a>
+                </div>
+            </li>
+            <li><a href="find-us.html">How to Find Us</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Gaming Events</h1>
+            <p class="tagline">Experience Epic Gaming Tournaments & Conventions</p>
+        </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="featured-events">
+        <div class="container">
+            <h2>Upcoming Gaming Events</h2>
+            <div class="event-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/League-of-Legends.jpg" alt="ESports Tournament">
+                        <div class="event-date">
+                            <span class="day">18
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>ESports Championship Finals</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 2:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Arena</p>
+                        <p class="event-description">Professional teams compete in League of Legends finals.</p>
+                        <div class="event-price">From £25.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/cod.jpg" alt="Gaming Convention">
+                        <div class="event-date">
+                            <span class="day">22
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>Gaming Convention 2024</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 10:00 AM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Full Arena</p>
+                        <p class="event-description">Call of Duty gaming convention with latest releases and demos.</p>
+                        <div class="event-price">From £30.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/csgo.jpg" alt="Cosplay Competition">
+                        <div class="event-date">
+                            <span class="day">29
+                            <span class="month">DEC
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>CSGO Championship</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 1:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Main Hall</p>
+                        <p class="event-description">CSGO competition with amazing prizes.</p>
+                        <div class="event-price">From £20.00</div>
+                        <a href="tickets.html" class="book-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gaming Categories -->
+    <section class="gaming-categories">
+        <div class="container">
+            <h2>Event Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>ESports Tournaments</h3>
+                    <p>Professional gaming events</p>
+                </div>
+
+                <div class="category-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gaming Conventions</h3>
+                    <p>Exhibitions and game demonstrations</p>
+                </div>
+
+                <div class="category-card">
+                    <i class="fas fa-mask"></i>
+                    <h3>Cosplay Events</h3>
+                    <p>Costume competitions and showcases</p>
+                </div>
+
+                <div class="category-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Meetups</h3>
+                    <p>Gaming community gatherings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gaming Features -->
+    <section class="gaming-features">
+        <div class="container">
+            <h2>Event Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-tv"></i>
+                    <h3>Pro Gaming Setup</h3>
+                    <p>High-end gaming PCs and consoles</p>
+                    <ul>
+                        <li>Latest gaming hardware</li>
+                        <li>Professional peripherals</li>
+                        <li>Ultra-low latency displays</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Network Infrastructure</h3>
+                    <p>High-speed gaming network</p>
+                    <ul>
+                        <li>Gigabit internet</li>
+                        <li>Low latency connection</li>
+                        <li>Backup systems</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <h3>Streaming Setup</h3>
+                    <p>Professional broadcasting equipment</p>
+                    <ul>
+                        <li>Live streaming capability</li>
+                        <li>Professional commentary setup</li>
+                        <li>Multiple camera angles</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-couch"></i>
+                    <h3>Viewer Experience</h3>
+                    <p>Comfortable viewing arrangements</p>
+                    <ul>
+                        <li>Large LED screens</li>
+                        <li>Premium seating</li>
+                        <li>Great acoustics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Events Gallery -->
+
+    <section class="event-gallery">
+        <div class="container">
+            <h2>Previous Events</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="image-container">
+                        <img src="images/brawlhalla.jpg" alt="Previous Gaming Event">
+                        <div class="overlay">
+                            <h3>2023 ESports Finals</h3>
+                            <p>Over 10,000 attendees</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay in the Game</h2>
+            <p>Subscribe for exclusive gaming event updates and early bird tickets</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Gaming Partners -->
+    <section class="partners">
+        <div class="container">
+            <h2>Our Gaming Partners</h2>
+            <div class="partner-grid">
+                <!--Partner Images-->
+                <img src="images/adidas.jpg" alt="Gaming Partner 1">
+                <img src="images/jdgaming.jpg" alt="Gaming Partner 2">
+                <img src="images/sony.jpg" alt="Gaming Partner 3">
+
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

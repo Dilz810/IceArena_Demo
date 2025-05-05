@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Arena Tickets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-color: #f8fafc;
+            --card-background: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--background-color);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .ticket-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .ticket-card {
+            background: var(--card-background);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ticket-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .ticket-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.15);
+        }
+
+        .ticket-card h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ticket-icon {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .ticket-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .features {
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .features li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features i {
+            color: var(--primary-color);
+        }
+
+        .price {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 0.25rem;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        .add-to-cart-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .cart-icon {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .cart-count {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 2rem;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .cart-icon a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .cart-icon a:hover {
+            color: var(--primary-color);
+        }
+
+        @keyframes addToCartAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .animate-cart {
+            animation: addToCartAnimation 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .ticket-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo2.PNG" alt="Event Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="events.html">Events</a>
+                <div class="dropdown-content">
+                    <a href="sports.html">Sports</a>
+                    <a href="comedy.html">Comedy</a>
+                    <a href="gaming.html">Gaming</a>
+                    <a href="music.html">Music</a>
+                    <a href="art.html">Art</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ourarena.html">Our Arena</a>
+                <div class="dropdown-content">
+                    <a href="seating-plan.hatml">Seating Plan</a>
+                </div>
+            </li>
+            <li><a href="find-us.html">How to Find Us</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="header">
+        <h1>Ice Arena Tickets</h1>
+        <p>Experience the thrill of ice skating with our premium tickets</p>
+    </div>
+
+    <div class="events-section">
+        <h2>Upcoming Events</h2>
+        <div class="events-container">
+            <div class="event-card">
+                <img src="images/football.jpg" alt="Pro Football League">
+                <div class="event-details">
+                    <h3>Pro Football League</h3>
+                    <p class="event-date"><i class="far fa-calendar-alt"></i> Dec 15, 2023</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 19:00</p>
+                    <p class="event-description">Proffesional Football League Championship Game.</p>
+                    <div class="event-price">£25 <span>/ person</span></div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pro Football League', 25)">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+    
+            <div class="event-card">
+                <img src="images/boxing.jpg" alt="Boxing Night">
+                <div class="event-details">
+                    <h3>Championship Boxing Night</h3>
+                    <p class="event-date"><i class="far fa-calendar-alt"></i> Dec 20, 2023</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 18:30</p>
+                    <p class="event-description">World-Class boxing championship event.</p>
+                    <div class="event-price">£40 <span>/ person</span></div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Boxing Event', 40)">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images/swimming.jpg" alt="Swimming Event">
+                <div class="event-details">
+                    <h3>World-Class Swimming Event</h3>
+                    <p class="event-date"><i class="far fa-calendar-alt"></i> Dec 20, 2023</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 18:30</p>
+                    <p class="event-description">World-Class swimming event.</p>
+                    <div class="event-price">£30 <span>/ person</span></div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Winter Figure Skating Show', 30)">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images/comedy.jpg" alt="Comedy">
+                <div class="event-details">
+                    <h3>Michael McIntyre </h3>
+                    <p class="event-date"><i class="far fa-calendar-alt"></i> Dec 20, 2023</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 18:30</p>
+                    <p class="event-description">Award-winning comedian returns with new material.</p>
+                    <div class="event-price">£25 <span>/ person</span></div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Winter Figure Skating Show', 25)">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images/white.jpg" alt="Comedy Gala 2024">
+                <div class="event-details">
+                    <h3>Winter Figure Skating Show</h3>
+                    <p class="event-date"><i class="far fa-calendar-alt"></i> Dec 20, 2023</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 18:30</p>
+                    <p class="event-description">Multiple comedians in one spectacular show.</p>
+                    <div class="event-price">£25 <span>/ person</span></div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Winter Figure Skating Show', 25)">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images/bosh.jpg" alt="Comedy Night Live">
+                <div class="event-details">
+                    <h3>Comedy Night Live</h3>
+                    <p class="event-date"><i class="far fa-calendar-alt"></i> Dec 20, 2023</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 18:30</p>
+                    <p class="event-description">An evening of improvised comedy.</p>
+                    <div class="event-price">£25 <span>/ person</span></div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Comedy Night Live', 25)">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images/csgo.jpg" alt="CSGO Championship">
+                <div class="event-details">
+                    <h3>CSGO Championship</h3>
+                    <p class="event-date"><i class="far fa-calendar-alt"></i> Dec 20, 2023</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 18:30</p>
+                    <p class="event-description">CSGO Championship.</p>
+                    <div class="event-price">£25 <span>/ person</span></div>
+                    <button class="add-to-cart-btn" onclick="addToCart('CSGO Championship', 25)">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images/League-of-Legends.jpg" alt="ESports Championship Finals">
+                <div class="event-details">
+                    <h3>ESports Championship Finals</h3>
+                    <p class="event-date"><i class="far fa-calendar-alt"></i> Dec 20, 2023</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 18:30</p>
+                    <p class="event-description">Professional teams compete in League of Legends finals.</p>
+                    <div class="event-price">£25 <span>/ person</span></div>
+                    <button class="add-to-cart-btn" onclick="addToCart('ESports Championship Finals', 25)">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+    
+    
+            <div class="event-card">
+                <img src="images/cod.jpg" alt="Gaming Convention 2024">
+                <div class="event-details">
+                    <h3>Gaming Convention 2024</h3>
+                    <p class="event-date"><i class="far fa-calendar-alt"></i> Every Friday</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 20:00</p>
+                    <p class="event-description">Call of Duty gaming convention with latest releases and demos.</p>
+                    <div class="event-price">£20 <span>/ person</span></div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Gaming Convention 2024', 20)">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <style>
+  
+    .events-section {
+        max-width: 1400px;
+        margin: 0 auto 3rem auto;
+        padding: 2rem;
+    }
+    
+    .events-section h2 {
+        text-align: center;
+        color: var(--text-primary);
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+    }
+    
+    .events-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
+        gap: 2rem;
+        padding: 1rem;
+    }
+    
+    .event-card {
+        background: var(--card-background);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .event-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .event-details {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        background: white;
+    }
+    
+    .event-details h3 {
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    .event-date, .event-time {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .event-date i, .event-time i {
+        color: var(--primary-color);
+    }
+    
+    .event-description {
+        color: var(--text-secondary);
+        margin: 1rem 0;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+    
+    .event-price {
+        font-size: 1.75rem;
+        color: var(--primary-color);
+        font-weight: 700;
+        margin: 1rem 0;
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+    }
+    
+    .event-price span {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        font-weight: normal;
+    }
+    
+    .add-to-cart-btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: auto;
+    }
+    
+    .add-to-cart-btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .events-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .events-container {
+            grid-template-columns: 1fr; /* 1 column on mobile */
+            gap: 1.5rem;
+        }
+    
+        .events-section {
+            padding: 1rem;
+        }
+    
+        .event-card img {
+            height: 200px;
+        }
+    
+        .event-details {
+            padding: 1rem;
+        }
+    
+        .event-details h3 {
+            font-size: 1.25rem;
+        }
+    }
+
+    .tickets-btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: linear-gradient(to right, #4CAF50, #45a049);
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        font-family: 'Inter', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .tickets-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+        background: linear-gradient(to right, #45a049, #4CAF50);
+    }
+    
+    .tickets-btn:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 10px rgba(76, 175, 80, 0.2);
+    }
+    
+    /* Optional: Add a subtle ripple effect */
+    .tickets-btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.6s ease, height 0.6s ease;
+    }
+    
+    .tickets-btn:hover::after {
+        width: 200px;
+        height: 200px;
+    }
+    </style>
+    
+    </style>
+    
+    >
+    <script>
+    let cartCount = 0;
+    const cartItems = [];
+    
+    function addToCart(eventName, price) {
+        // Add item to cart array
+        cartItems.push({
+            name: eventName,
+            price: price
+        });
+        
+        // Update cart count
+        cartCount++;
+        const cartCountElement = document.querySelector('.cart-count');
+        cartCountElement.textContent = cartCount;
+        
+        // Add animation to cart icon
+        const cartIcon = document.querySelector('.cart-icon');
+        cartIcon.classList.add('animate-cart');
+        
+        // Store cart data in localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('cartCount', cartCount);
+        
+        // Remove animation class after animation completes
+        setTimeout(() => {
+            cartIcon.classList.remove('animate-cart');
+        }, 300);
+        
+        // Show confirmation message
+        showNotification(`Added ${eventName} to cart!`);
+    }
+    
+    function showNotification(message) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = message;
+        
+        // Add notification to page
+        document.body.appendChild(notification);
+        
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+    
+    // Load cart data on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedCartItems = localStorage.getItem('cartItems');
+        const savedCartCount = localStorage.getItem('cartCount');
+        
+        if (savedCartItems) {
+            cartItems.push(...JSON.parse(savedCartItems));
+        }
+        
+        if (savedCartCount) {
+            cartCount = parseInt(savedCartCount);
+            document.querySelector('.cart-count').textContent = cartCount;
+        }
+    });
+    </script>
+    
+    
+    <style>
+    .notification {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        animation: slideIn 0.3s ease-out;
+        z-index: 1000;
+    }
+    
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    </style>
+    
+
+    <div class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+        <a href="cart.html">View Cart</a>
+    </div>
+
+    <div class="ticket-container">
+        <div class="ticket-card">
+            <h3><i class="fas fa-ticket-alt ticket-icon"></i> Adult Ticket</h3>
+            <p>Full day access to ice arena with premium amenities</p>
+            <ul class="features">
+                <li><i class="fas fa-check"></i> Full day access</li>
+                <li><i class="fas fa-check"></i> Locker included</li>
+                <li><i class="fas fa-check"></i> Equipment rental available</li>
+            </ul>
+            <div class="price">£25 <span>/ person</span></div>
+            <button class="add-to-cart-btn" onclick="addToCart('Adult Ticket', 25)">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="ticket-card">
+            <h3><i class="fas fa-ticket-alt ticket-icon"></i> Child Ticket</h3>
+            <p>Perfect for young skaters under 12 years</p>
+            <ul class="features">
+                <li><i class="fas fa-check"></i> Full day access</li>
+                <li><i class="fas fa-check"></i> Beginner assistance</li>
+                <li><i class="fas fa-check"></i> Safety equipment included</li>
+            </ul>
+            <div class="price">£15 <span>/ person</span></div>
+            <button class="add-to-cart-btn" onclick="addToCart('Child Ticket', 15)">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="ticket-card">
+            <h3><i class="fas fa-ticket-alt ticket-icon"></i> Family Pack</h3>
+            <p>Best value for families</p>
+            <ul class="features">
+                <li><i class="fas fa-check"></i> 2 Adults + 2 Children</li>
+                <li><i class="fas fa-check"></i> Family locker</li>
+                <li><i class="fas fa-check"></i> 10% off at café</li>
+            </ul>
+            <div class="price">£70 <span>/ pack</span></div>
+            <button class="add-to-cart-btn" onclick="addToCart('Family Pack', 70)">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({name, price});
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            const cartIcon = document.querySelector('.cart-icon');
+            cartIcon.classList.add('animate-cart');
+            setTimeout(() => {
+                cartIcon.classList.remove('animate-cart');
+            }, 300);
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.querySelector('.cart-count').textContent = cart.length;
+        }
+
+        updateCartCount();
+
+        
+    </script>
+</body>
+</html>

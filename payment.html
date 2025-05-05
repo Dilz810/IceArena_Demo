@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="%= csrfToken %>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Secure Checkout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            color: #2c3e50;
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        .payment-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+        }
+
+        .payment-form, .order-summary {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .form-input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .card-input-group {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .order-summary {
+            position: sticky;
+            top: 100px;
+        }
+
+        .order-items {
+            margin: 1.5rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid #ecf0f1;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .item-details {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .item-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .price-details {
+            margin-top: 1.5rem;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+        }
+
+        .total-row {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            border-top: 2px solid #ecf0f1;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 1.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #27ae60;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-method {
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method.active {
+            border-color: #3498db;
+            background: #f0f9ff;
+        }
+
+        @media (max-width: 968px) {
+            .payment-container {
+                grid-template-columns: 1fr;
+            }
+
+            .order-summary {
+                position: static;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-input-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-form">
+            <h2 class="section-title">Payment Details</h2>
+            
+            <div class="payment-methods">
+                <div class="payment-method active">
+                    <i class="fas fa-credit-card"></i> Credit Card
+                </div>
+                <div class="payment-method">
+                    <i class="fab fa-paypal"></i> PayPal
+                </div>
+            </div>
+
+            <form id="payment-form" onsubmit="handlePayment(event)">
+                <div class="form-group">
+                    <label class="form-label">Cardholder Name</label>
+                    <input type="text" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Card Number</label>
+                    <input type="text" class="form-input" required pattern="[0-9]{16}" maxlength="16">
+                </div>
+
+                <div class="card-input-group">
+                    <div class="form-group">
+                        <label class="form-label">Expiration Date</label>
+                        <input type="text" class="form-input" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">CVV</label>
+                        <input type="text" class="form-input" required pattern="[0-9]{3,4}" maxlength="4">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Billing Address</label>
+                    <input type="text" class="form-input" required>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-lock"></i> Pay Securely
+                </button>
+
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Your payment is secured with SSL encryption</span>
+                </div>
+            </form>
+        </div>
+
+        <div class="order-summary">
+            <h2 class="section-title">Order Summary</h2>
+            <div class="order-items" id="order-items">
+                
+            </div>
+
+            <div class="price-details">
+                <div class="price-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">£0.00</span>
+                </div>
+                <div class="price-row">
+                    <span>Shipping</span>
+                    <span id="shipping">£0.00</span>
+                </div>
+                <div class="price-row">
+                    <span>Tax</span>
+                    <span id="tax">£0.00</span>
+                </div>
+                <div class="price-row total-row">
+                    <span>Total</span>
+                    <span id="total">£0.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handlePayment(event) {
+            event.preventDefault();
+            
+            alert('Payment processing would happen here');
+        }
+
+        function displayOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderItemsContainer = document.getElementById('order-items');
+            let subtotal = 0;
+
+            orderItemsContainer.innerHTML = cart.map(item => {
+                subtotal += item.price;
+                return `
+                    <div class="order-item">
+                        <div class="item-details">
+                            <img src="${item.image || 'placeholder.jpg'}" alt="${item.name}" class="item-image">
+                            <span>${item.name}</span>
+                        </div>
+                        <span>£${item.price.toFixed(2)}</span>
+                    </div>
+                `;
+            }).join('');
+
+            const shipping = 5.99;
+            const tax = subtotal * 0.1; 
+            const total = subtotal + shipping + tax;
+
+            document.getElementById('subtotal').textContent = `£${subtotal.toFixed(2)}`;
+            document.getElementById('shipping').textContent = `£${shipping.toFixed(2)}`;
+            document.getElementById('tax').textContent = `£${tax.toFixed(2)}`;
+            document.getElementById('total').textContent = `£${total.toFixed(2)}`;
+        }
+
+        
+        displayOrderSummary();
+
+        
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', () => {
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+                method.classList.add('active');
+            });
+        });
+
+        async function handlePayment(totalAmount) {
+            if (!window.PaymentRequest) {
+                alert('Your browser does not support the Payment Request API');
+                return;
+            }
+        
+           
+            const supportedPaymentMethods = [
+                {
+                    supportedMethods: 'basic-card',
+                    data: {
+                        supportedNetworks: ['visa', 'mastercard', 'amex'],
+                        supportedTypes: ['credit', 'debit']
+                    }
+                }
+            ];
+        
+            const amountInCents = Math.round(totalAmount * 100);
+        
+           
+            const paymentDetails = {
+                total: {
+                    label: 'Total Amount',
+                    amount: {
+                        currency: 'USD',
+                        value: (amountInCents / 100).toFixed(2)
+                    }
+                },
+                displayItems: [
+                    {
+                        label: 'Ice Arena Tickets',
+                        amount: {
+                            currency: 'USD',
+                            value: (amountInCents / 100).toFixed(2)
+                        }
+                    }
+                ]
+            };
+        
+            try {
+                
+                const request = new PaymentRequest(
+                    supportedPaymentMethods,
+                    paymentDetails
+                );
+        
+               
+                const canMakePayment = await request.canMakePayment();
+                if (!canMakePayment) {
+                    throw new Error('Payment method not available');
+                }
+        
+                
+                const paymentResponse = await request.show();
+        
+                
+                try {
+                    // 
+                    await processPaymentOnServer(paymentResponse);
+                    
+                   
+                    await paymentResponse.complete('success');
+                    
+                    localStorage.removeItem('cart');
+                    updateCartCount();
+                    
+                    
+                    alert('Payment successful! Thank you for your purchase.');
+                    
+                } catch (error) {
+                    
+                    await paymentResponse.complete('fail');
+                    throw error;
+                }
+        
+            } catch (error) {
+                alert('Payment failed: ' + error.message);
+                console.error('Payment error:', error);
+            }
+        }
+        
+        
+        function calculateCartTotal() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            return cart.reduce((total, item) => total + item.price, 0);
+        }
+        
+       
+        async function processPaymentOnServer(paymentResponse) {
+            return new Promise((resolve, reject) => {
+                
+                setTimeout(() => {
+               
+                    const paymentSuccessful = true;
+                    if (paymentSuccessful) {
+                        resolve();
+                    } else {
+                        reject(new Error('Payment processing failed'));
+                    }
+                }, 1000);
+            });
+        }
+        
+        
+        function initiateCheckout() {
+            const total = calculateCartTotal();
+            if (total <= 0) {
+                alert('Your cart is empty');
+                return;
+            }
+            handlePayment(total);
+        }
+
+       
+        function initPayPal() {
+            const paypalForm = `
+                <form id="paypal-form" method="post" action="https://www.paypal.com/cgi-bin/webscr">     
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
+                    <input type="hidden" name="item_name" value="Ice Arena Tickets">
+                    <input type="hidden" name="amount" id="paypal-amount">
+                    <input type="hidden" name="currency_code" value="GBP">
+                    <input type="hidden" name="return" value="YOUR_SUCCESS_PAGE_URL">
+                    <input type="hidden" name="cancel_return" value="YOUR_CANCEL_PAGE_URL">
+                    <button type="submit" class="submit-btn">
+                        <i class="fab fa-paypal"></i> Pay with PayPal
+                    </button>
+                </form>
+            `;
+        
+            const creditCardForm = document.getElementById('payment-form');
+            const paymentContainer = creditCardForm.parentElement;
+        
+            
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.addEventListener('click', () => {
+                    document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+                    method.classList.add('active');
+                    
+                    
+                    if (method.textContent.trim().includes('PayPal')) {
+                        creditCardForm.style.display = 'none';
+                        if (!document.getElementById('paypal-form')) {
+                            paymentContainer.insertAdjacentHTML('beforeend', paypalForm);
+                        } else {
+                            document.getElementById('paypal-form').style.display = 'block';
+                        }
+                        
+                        const total = document.getElementById('total').textContent.replace('£', '');
+                        document.getElementById('paypal-amount').value = total;
+                    } else {
+                        creditCardForm.style.display = 'block';
+                        const paypalFormElement = document.getElementById('paypal-form');
+                        if (paypalFormElement) {
+                            paypalFormElement.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        }
+        
+        
+        document.addEventListener('DOMContentLoaded', initPayPal);
+        
+        
+    </script>
+</body>
+</html>
